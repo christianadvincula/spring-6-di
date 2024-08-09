@@ -41,7 +41,8 @@
 		@Test
 		void testMain(CapturedOutput output) {
 			// Mocking the sayHello method
-			when(myController.sayHello()).thenReturn("Hello Everyone!!!!");
+			when(myController.sayHello()).thenReturn("Hello Everyone From GreetingServiceImpl!!!");
+			String s = myController.sayHello();
 
 			// Running the main method
 			String[] args = {};
@@ -51,6 +52,6 @@
 			assertNotNull(output);
 			String out = output.getOut();
 			assert(out.contains("In Main Method"));
-			assert(out.contains("Hello Everyone!!!!"));
+			assert(out.contains(s));
 		}
 	}

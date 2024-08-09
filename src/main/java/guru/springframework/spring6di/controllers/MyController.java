@@ -14,7 +14,6 @@ public class MyController {
     }
 
     public String sayHello() {
-        System.out.println("Inside sayHello method");
         return greetingService.sayGreeting();
     }
 
