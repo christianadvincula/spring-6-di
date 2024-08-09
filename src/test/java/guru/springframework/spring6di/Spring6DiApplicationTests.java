@@ -51,6 +51,6 @@
 			assertNotNull(output);
 			String out = output.getOut();
 			assert(out.contains("In Main Method"));
-			assert(out.contains("Hello Everyone!!!!"));
+			assert(out.contains("Hello Everyone From GreetingServiceImpl!!!"));
 		}
 	}
