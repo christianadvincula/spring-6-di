@@ -10,6 +10,7 @@
 	import org.springframework.boot.test.system.OutputCaptureExtension;
 	import org.springframework.context.ApplicationContext;
 
+	import static org.junit.jupiter.api.Assertions.assertEquals;
 	import static org.junit.jupiter.api.Assertions.assertNotNull;
 	import static org.mockito.Mockito.when;
 
@@ -25,6 +26,16 @@
 		@Test
 		void contextLoads() {
 			assertNotNull(context);
+		}
+
+		@Test
+		void testControllerScope() {
+			assertNotNull(myController);
+			assertNotNull(context);
+
+			System.out.println(myController);
+			System.out.println(context.getBean("myController"));
+			assertEquals(myController, context.getBean("myController"));
 		}
 
 		@Test
