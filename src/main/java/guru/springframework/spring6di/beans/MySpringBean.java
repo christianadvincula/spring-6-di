@@ -33,6 +33,8 @@ public class MySpringBean implements BeanNameAware, BeanFactoryAware, Applicatio
         System.out.println("5. ApplicationContextAware setApplicationContext: " + applicationContext);
     }
 
+    //BeanPostProcessor postProcessBeforeInitialization
+
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("7. InitializingBean afterPropertiesSet");
@@ -41,6 +43,8 @@ public class MySpringBean implements BeanNameAware, BeanFactoryAware, Applicatio
     public void customInit() {
         System.out.println("8. Custom init-method: customInit() - Another custom initialization logic.");
     }
+
+    //BeanPostProcessor postProcessBeforeInitialization
 
     @Override
     public void destroy() throws Exception {
