@@ -52,6 +52,6 @@ public class MySpringBean implements BeanNameAware, BeanFactoryAware, Applicatio
     }
 
     public void customDestroy() {
-        System.out.println("11. Custom init-method: customInit() - Another custom initialization logic.");
+        System.out.println("11. Custom destroy-method: customDestroy() - Another custom destroy logic.");
     }
 }

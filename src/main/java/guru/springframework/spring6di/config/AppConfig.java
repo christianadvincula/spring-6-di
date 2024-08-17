@@ -1,15 +1,22 @@
 package guru.springframework.spring6di.config;
 
+import guru.springframework.spring6di.beans.LifeCycleDemoBean;
 import guru.springframework.spring6di.beans.MyBeanPostProcessor;
 import guru.springframework.spring6di.beans.MySpringBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Controller;
+import org.springframework.context.annotation.Configuration;
 
-@Controller
+@Configuration
 public class AppConfig {
 
+
+    @Bean(initMethod = "initMethod", destroyMethod = "destroyMethod")
+    public LifeCycleDemoBean lifeCycleDemoBean() {
+        return new LifeCycleDemoBean();
+    }
+
     @Bean
-    public MyBeanPostProcessor myBeanPostProcessor(){
+    public static MyBeanPostProcessor myBeanPostProcessor(){
         return new MyBeanPostProcessor();
     }
 
